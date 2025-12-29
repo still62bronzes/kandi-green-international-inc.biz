@@ -1,25 +1,30 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <!--
-    One-file insurance broker template for Cloudflare Pages
-    Replace tokens like KANDI GREEN INTERNATIONAL INC., RADRESHA@kandi-green-international-inc.biz, etc. before deploy.
+    Combined site:
+    Layout = Website 2
+    Company/contact variables = Website 1
   -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KANDI GREEN INTERNATIONAL INC. — Independent Insurance Broker</title>
-  <meta name="description" content="KANDI GREEN INTERNATIONAL INC. helps individuals and businesses compare top-rated insurance options. Speak with RADRESHA SEIVEWRIGTH at (305) 878-7648." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <meta property="og:title" content="KANDI GREEN INTERNATIONAL INC. — Independent Insurance Broker" />
-  <meta property="og:description" content="Compare coverage, save money, and get personalized advice from RADRESHA SEIVEWRIGTH." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&w=1600&q=80" />
-  <meta name="theme-color" content="#0b4aa6" />
+  <title>KANDI GREEN INTERNATIONAL INC. — Insurance Guidance You Can Trust</title>
+  <meta name="description" content="KANDI GREEN INTERNATIONAL INC. helps individuals, families, and businesses compare top-rated insurance options with the guidance of RADRESHA SEIVEWRIGTH." />
 
-  <!-- JSON-LD: InsuranceAgency with placeholders -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="KANDI GREEN INTERNATIONAL INC. — Insurance Guidance You Can Trust" />
+  <meta property="og:description" content="Independent insurance broker helping you navigate health, life, Medicare, and business coverage with confidence." />
+  <meta property="og:type" content="website" />
+  <!-- Abstract / generic medical-ish hero image -->
+  <meta property="og:image" content="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80" />
+  <meta name="theme-color" content="#024873" />
+
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,610 +46,1743 @@
   </script>
 
   <style>
-    :root{
-      --bg:#0b132b;
-      --bg-2:#1c2541;
-      --brand:#0b4aa6;
-      --brand-2:#ec6c2d;
-      --text:#0b132b;
-      --muted:#6b7280;
-      --card:#ffffff;
-      --ring:rgba(11,74,166,.2);
-      --maxw:1200px;
-      --radius:16px;
-      --shadow:0 10px 30px rgba(0,0,0,0.08);
-      --footer-h: 120px;   /* sticky footer height */
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#111}
-    /* prevent sticky footer overlap */
-    body{padding-bottom:var(--footer-h)}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    img{max-width:100%;display:block}
-    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-    .topbar{background:var(--bg);color:#fff;font-size:14px}
-    .topbar .row{display:flex;gap:16px;align-items:center;justify-content:center;padding:8px 0;text-align:center}
-    .topbar a{color:#fff;text-decoration:none;border-bottom:1px dashed rgba(255,255,255,.3)}
-    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eef1f5}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:18px;color:var(--text)}
-    .brand .mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#5aa0ff)}
-    nav ul{display:flex;list-style:none;margin:0;padding:0;gap:20px}
-    nav a{color:var(--text);font-weight:600}
-    .cta-btn{background:var(--brand);color:#fff;padding:10px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:700;box-shadow:var(--shadow)}
-    .cta-btn:hover{opacity:.95}
-    .hero{background:linear-gradient(180deg,#f6f9ff,transparent);position:relative;overflow:hidden}
-    .hero .inner{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:56px 0}
-    .badge{display:inline-flex;align-items:center;gap:8px;background:#eaf2ff;color:#0b4aa6;padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px}
-    h1{font-size:44px;line-height:1.1;margin:14px 0 10px}
-    .sub{color:var(--muted);font-size:18px}
-    .hero-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
-    .card{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid #eef1f5;box-shadow:var(--shadow)}
-    .card h3{margin:0 0 6px;font-size:18px}
-    .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:26px 0}
-    .trust .mini{background:#fff;border:1px solid #eef1f5;border-radius:12px;padding:12px;text-align:center;color:var(--muted);font-weight:600}
-    section{padding:48px 0}
-    .section-title{font-size:28px;margin:0 0 8px}
-    .section-sub{color:var(--muted);margin:0 0 18px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-    .list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
-    .list li{display:flex;gap:10px;align-items:flex-start}
-    .check{width:20px;height:20px;border-radius:6px;background:#eaf8f0;color:#0a7a3d;display:flex;align-items:center;justify-content:center;font-weight:900;line-height:1}
-    .process{counter-reset:step}
-    .step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #eef1f5;padding:16px;border-radius:14px}
-    .step .num{width:34px;height:34px;border-radius:10px;background:#f1f5ff;display:flex;align-items:center;justify-content:center;color:var(--brand);font-weight:800}
-    .testimonial{background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:18px}
-    .quote{font-style:italic}
-    .about .bio{display:flex;gap:18px;align-items:center}
-    .about .bio img{width:84px;height:84px;border-radius:50%;object-fit:cover}
-    .cta{background:linear-gradient(135deg,#0b4aa6,#1c2541);color:#fff;border-radius:20px;padding:28px;display:grid;gap:12px}
-    .cta .actions{display:flex;flex-wrap:wrap;gap:12px}
-    .ghost{background:transparent;border:2px solid #fff;color:#fff;padding:10px 16px;border-radius:12px;font-weight:800;cursor:pointer}
-    .faq details{background:#fff;border:1px solid #eef1f5;border-radius:14px;padding:12px}
-    .faq summary{cursor:pointer;font-weight:700}
-    .contact .box{background:#fff;border:1px solid #eef1f5;border-radius:16px;padding:20px}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    input,select,textarea{width:100%;padding:12px;border:1px solid #dfe3ea;border-radius:12px;font:inherit}
-    input:focus,textarea:focus,select:focus{outline:2px solid var(--ring);border-color:var(--brand)}
-    .submit{background:var(--brand);color:#fff;padding:12px 18px;border:none;border-radius:12px;font-weight:800;cursor:pointer}
-
-    /* Disclosure summaries like Privacy, Terms */
-    .disclosure{margin-top:10px}
-    .disclosure summary{color:#374151;font-weight:600;cursor:pointer;user-select:none}
-    .disclosure .body{margin-top:8px;padding:10px 0;color:#374151;line-height:1.5}
-
-    /* New styles for consent card and consent checkboxes */
-    .legal-sections{margin-top:16px}
-    .legal-sections h4{font-size:16px;margin:0 0 10px;font-weight:700}
-    .consent-card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:16px;margin-bottom:16px}
-    .consent-card p{margin:8px 0;font-size:14px;line-height:1.5;color:#374151}
-    .consent-card p:first-child{margin-top:0}
-    .consent-card p:last-child{margin-bottom:0}
-    .consent-line{display:flex;gap:10px;align-items:flex-start;margin:12px 0}
-    .consent-line input[type="checkbox"]{width:18px;height:18px;margin-top:2px;flex-shrink:0}
-    .consent-line label{font-size:14px;line-height:1.5;color:#374151}
-
-    /* Mobile */
-    @media(max-width:900px){
-      .hero .inner{grid-template-columns:1fr;gap:26px}
-      .hero-cards{grid-template-columns:1fr}
-      .trust{grid-template-columns:repeat(2,1fr)}
-      .grid-3{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
-      .row{grid-template-columns:1fr}
-      h1{font-size:32px}
-      nav ul{display:none}
-      .cta-btn{display:none}
+    :root {
+      --bg: #050816;
+      --bg-soft: #0f172a;
+      --bg-soft-2: #020617;
+      --accent: #06b6d4;
+      --accent-soft: rgba(56, 189, 248, 0.1);
+      --accent-2: #22c55e;
+      --text-main: #e5e7eb;
+      --text-muted: #94a3b8;
+      --card-bg: #020617;
+      --card-border: rgba(148, 163, 184, 0.25);
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 50px rgba(15, 23, 42, 0.7);
+      --footer-h: 110px;
+      --maxw: 1120px;
     }
 
-    footer{
-      background:var(--bg);
-      color:#cbd5e1;
-      font-size:13px;
-      position:fixed;
-      bottom:0;
-      left:0;
-      right:0;
-      height:var(--footer-h);
-      display:flex;
-      align-items:center;
-      z-index:10;
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0f172a 0, #020617 45%, #01010b 100%);
+      color: var(--text-main);
+      scroll-behavior: smooth;
     }
-    footer a{color:#cbd5e1}
-    .legal{opacity:.7}
+
+    body {
+      padding-bottom: var(--footer-h);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      border-radius: 16px;
+    }
+
+    .shell {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px 32px;
+    }
+
+    /* Top strip with contact info */
+    .top-strip {
+      background: linear-gradient(90deg, rgba(56,189,248,0.2), rgba(45,212,191,0.1), transparent);
+      border-bottom: 1px solid rgba(148,163,184,0.15);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .top-strip-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 6px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+    .top-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.7);
+      border: 1px solid rgba(148,163,184,0.4);
+    }
+    .top-pill span.emoji {
+      font-size: 14px;
+    }
+    .top-strip a {
+      color: var(--text-main);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    /* Header / nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.92), rgba(15,23,42,0.65), transparent);
+      border-bottom: 1px solid rgba(148,163,184,0.2);
+    }
+    .nav-bar {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      font-size: 17px;
+      color: var(--text-main);
+    }
+    .brand-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 14px;
+      background:
+        radial-gradient(circle at 0% 0%, #22c55e 0, transparent 55%),
+        radial-gradient(circle at 100% 0%, #06b6d4 0, transparent 55%),
+        radial-gradient(circle at 50% 110%, #1d4ed8 0, transparent 60%),
+        #020617;
+      border: 1px solid rgba(148,163,184,0.6);
+      box-shadow: 0 10px 30px rgba(15,23,42,0.8);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      font-weight: 500;
+      position: relative;
+      text-decoration: none;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #06b6d4, #22c55e);
+      transition: width 0.18s ease;
+    }
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      border: none;
+      border-radius: 999px;
+      padding: 9px 18px;
+      background: radial-gradient(circle at 0 0, #22c55e, #06b6d4);
+      color: #0b1120;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+    }
+    .btn-primary:hover {
+      filter: brightness(1.06);
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 8px 14px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(148,163,184,0.9);
+      color: var(--text-main);
+    }
+
+    /* Top-level layout: hero + sidebar contact card */
+    main {
+      margin-top: 14px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .hero-block {
+      background: radial-gradient(circle at 0% 0%, rgba(56,189,248,0.25), transparent 65%),
+                  radial-gradient(circle at 90% 10%, rgba(34,197,94,0.2), transparent 55%),
+                  linear-gradient(140deg, rgba(15,23,42,0.95), rgba(15,23,42,0.88));
+      border-radius: 26px;
+      padding: 24px 22px 26px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148,163,184,0.25);
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--text-muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+    .hero-eyebrow span.badge-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #22c55e 0, #22c55e 40%, transparent 70%);
+      box-shadow: 0 0 16px rgba(34,197,94,0.7);
+    }
+
+    h1 {
+      margin: 14px 0 8px;
+      font-size: 38px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 540px;
+    }
+
+    .hero-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .meta-chip {
+      border-radius: 999px;
+      padding: 6px 12px;
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 12px;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(15,23,42,0.9);
+    }
+    .meta-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #06b6d4;
+    }
+
+    .hero-image-row {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .hero-image-main {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid rgba(148,163,184,0.4);
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-image-main img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .hero-image-tag {
+      position: absolute;
+      left: 12px;
+      bottom: 10px;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.6);
+      color: var(--text-muted);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .stat-card {
+      border-radius: 16px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.32);
+      padding: 10px 12px;
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+    }
+    .stat-card strong {
+      font-size: 13px;
+    }
+    .stat-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .stat-pill {
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.32);
+      color: var(--text-muted);
+    }
+
+    .hero-actions {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .hero-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      max-width: 260px;
+    }
+
+    /* Sidebar contact card always visible on desktop */
+    .sidebar-card {
+      background: rgba(15,23,42,0.98);
+      border-radius: 24px;
+      padding: 20px 18px 18px;
+      border: 1px solid rgba(148,163,184,0.35);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar-title {
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sidebar-tagline {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .sidebar-info {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .sidebar-info strong {
+      color: var(--text-main);
+    }
+
+    .sidebar-hours {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .sidebar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .sidebar-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(148,163,184,0.3), transparent);
+      margin: 8px 0;
+    }
+
+    .sidebar-badges {
+      font-size: 11px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .mini-badge {
+      border-radius: 999px;
+      padding: 4px 8px;
+      border: 1px solid rgba(148,163,184,0.35);
+      background: rgba(15,23,42,0.9);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+    }
+    .mini-badge span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    /* Sections below hero */
+    section {
+      margin-top: 34px;
+    }
+
+    .section-header {
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: 22px;
+      margin: 0 0 4px;
+    }
+    .section-sub {
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 720px;
+    }
+
+    /* Service stripe with horizontal cards */
+    .service-stripe {
+      border-radius: 22px;
+      border: 1px solid rgba(148,163,184,0.35);
+      background: radial-gradient(circle at 0 0, rgba(56,189,248,0.25), transparent 60%),
+                  radial-gradient(circle at 100% 100%, rgba(34,197,94,0.25), transparent 55%),
+                  rgba(15,23,42,0.9);
+      padding: 16px 16px 18px;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: 1.3fr 2fr;
+      gap: 14px;
+    }
+
+    .service-intro {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .service-intro strong {
+      color: var(--text-main);
+    }
+
+    .service-categories {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .service-card {
+      border-radius: 16px;
+      background: rgba(15,23,42,0.95);
+      border: 1px solid rgba(148,163,184,0.4);
+      padding: 10px 11px 11px;
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .service-card h3 {
+      margin: 0;
+      font-size: 13px;
+    }
+    .service-tags {
+      margin-top: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .service-tag {
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.35);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Why Choose + process + testimonial in 3-column mosaic */
+    .tri-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1.3fr 1.2fr;
+      gap: 16px;
+    }
+
+    .card-panel {
+      background: rgba(15,23,42,0.95);
+      border-radius: 20px;
+      padding: 14px 14px 15px;
+      border: 1px solid rgba(148,163,184,0.35);
+    }
+
+    .list-check {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .list-check li {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      color: var(--text-muted);
+    }
+    .check-icon {
+      margin-top: 1px;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(34,197,94,0.2);
+      border: 1px solid rgba(34,197,94,0.7);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #bbf7d0;
+      flex-shrink: 0;
+    }
+
+    .step-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+      font-size: 13px;
+      counter-reset: step;
+      color: var(--text-muted);
+    }
+    .step-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .step-badge {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(56,189,248,0.8);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #e0f2fe;
+      background: rgba(15,23,42,0.9);
+      flex-shrink: 0;
+    }
+    .step-item strong {
+      color: var(--text-main);
+    }
+
+    .testimonial {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .testimonial blockquote {
+      margin: 0 0 8px;
+      font-style: italic;
+    }
+    .testimonial footer {
+      font-size: 12px;
+      color: var(--text-main);
+    }
+
+    /* About block with linear vertical split */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1.4fr);
+      gap: 18px;
+    }
+    .about-card {
+      background: rgba(15,23,42,0.97);
+      border-radius: 22px;
+      border: 1px solid rgba(148,163,184,0.38);
+      padding: 14px 14px 16px;
+    }
+
+    .rep-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .rep-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.6);
+      flex-shrink: 0;
+    }
+    .rep-name {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .rep-role {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .about-body {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: grid;
+      gap: 6px;
+    }
+    .about-highlight {
+      border-radius: 16px;
+      padding: 10px 11px;
+      background: rgba(15,23,42,0.95);
+      border: 1px dashed rgba(148,163,184,0.5);
+      font-size: 12px;
+    }
+
+    .about-photo-wrapper {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.4);
+    }
+    .about-photo-wrapper img {
+      height: 260px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .about-tag {
+      position: absolute;
+      right: 12px;
+      bottom: 10px;
+      border-radius: 999px;
+      padding: 4px 10px;
+      background: rgba(15,23,42,0.92);
+      border: 1px solid rgba(148,163,184,0.7);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* FAQ accordion */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+      gap: 18px;
+    }
+
+    details.faq-item {
+      background: rgba(15,23,42,0.95);
+      border-radius: 16px;
+      border: 1px solid rgba(148,163,184,0.4);
+      padding: 8px 10px 8px;
+      font-size: 13px;
+    }
+    details.faq-item + details.faq-item {
+      margin-top: 8px;
+    }
+    details.faq-item summary {
+      cursor: pointer;
+      list-style: none;
+      color: var(--text-main);
+    }
+    details.faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    details.faq-item summary::after {
+      content: "+";
+      float: right;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    details.faq-item[open] summary::after {
+      content: "–";
+    }
+    details.faq-item p {
+      margin: 6px 0 4px;
+      color: var(--text-muted);
+    }
+
+    /* Contact / quote section */
+    #contact {
+      margin-top: 32px;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .quote-card {
+      background: rgba(15,23,42,0.98);
+      border-radius: 24px;
+      padding: 16px 14px 18px;
+      border: 1px solid rgba(148,163,184,0.38);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .quote-card label {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .field {
+      margin-bottom: 9px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 9px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(148,163,184,0.55);
+      background: rgba(15,23,42,0.96);
+      color: var(--text-main);
+      font-size: 13px;
+      font-family: inherit;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 78px;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: 1px solid rgba(56,189,248,0.7);
+      box-shadow: 0 0 0 1px rgba(56,189,248,0.5);
+    }
+
+    /* Express consent + legal */
+    .legal-group-title {
+      font-size: 12px;
+      font-weight: 600;
+      margin: 4px 0 6px;
+    }
+
+    .consent-card {
+      border-radius: 16px;
+      border: 1px dashed rgba(148,163,184,0.55);
+      padding: 10px 11px;
+      background: rgba(15,23,42,0.96);
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .consent-card p {
+      margin: 4px 0;
+    }
+    .consent-card p strong {
+      color: var(--text-main);
+    }
+
+    .consent-line {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px;
+      align-items: flex-start;
+      margin: 6px 0;
+    }
+    .consent-line input[type="checkbox"] {
+      margin-top: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      accent-color: #06b6d4;
+    }
+    .consent-line label {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .consent-line label strong {
+      color: var(--text-main);
+    }
+
+    details.disclosure {
+      margin-top: 8px;
+      border-radius: 14px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.98);
+      font-size: 11px;
+      padding: 7px 8px;
+    }
+    details.disclosure summary {
+      cursor: pointer;
+      list-style: none;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+    details.disclosure summary::-webkit-details-marker {
+      display: none;
+    }
+    details.disclosure summary::after {
+      content: "▼";
+      float: right;
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+    details.disclosure[open] summary::after {
+      content: "▲";
+    }
+    .disclosure-body {
+      margin-top: 6px;
+      color: var(--text-muted);
+      max-height: 200px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .disclosure-body p {
+      margin: 4px 0;
+    }
+    .disclosure-body ul {
+      padding-left: 16px;
+      margin: 4px 0;
+    }
+    .disclosure-body li {
+      margin: 2px 0;
+    }
+
+    .submit-row {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .submit-row small {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    #formStatus {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      min-height: 14px;
+    }
+
+    /* Contact sidebar imagery - generic medical / office */
+    .contact-side {
+      display: grid;
+      gap: 10px;
+    }
+    .contact-photo-main {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.5);
+    }
+    .contact-photo-main img {
+      height: 210px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .contact-photo-label {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.92);
+      border: 1px solid rgba(148,163,184,0.7);
+      color: var(--text-muted);
+    }
+
+    .contact-card {
+      border-radius: 18px;
+      background: rgba(15,23,42,0.96);
+      border: 1px solid rgba(148,163,184,0.5);
+      padding: 10px 11px 11px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .contact-card strong {
+      color: var(--text-main);
+    }
+
+    /* Footer (fixed) */
+    footer.site-footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: var(--footer-h);
+      background: rgba(3,7,18,0.96);
+      border-top: 1px solid rgba(148,163,184,0.3);
+      color: var(--text-muted);
+      font-size: 11px;
+      z-index: 30;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      height: 100%;
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+    }
+    .footer-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-brand-mark {
+      width: 22px;
+      height: 22px;
+      border-radius: 9px;
+      background: radial-gradient(circle at 0 0, #22c55e, #06b6d4);
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: var(--text-main);
+      text-decoration: underline;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 980px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .sidebar-card {
+        order: -1;
+      }
+      .service-stripe {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .service-categories {
+        grid-auto-flow: row;
+      }
+      .tri-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .about-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .faq-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .contact-layout {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+      .nav-cta .btn-ghost {
+        display: none;
+      }
+      h1 {
+        font-size: 30px;
+      }
+      .hero-image-row {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .hero-image-main img {
+        height: 200px;
+      }
+      .top-strip-inner {
+        justify-content: flex-start;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Top Bar -->
-  <div class="topbar">
-    <div class="container">
-      <div class="row">
-        <span>📞 Call <a href="tel:(305) 878-7648">(305) 878-7648</a></span>
-        <span>✉️ <a href="mailto:RADRESHA@kandi-green-international-inc.biz">RADRESHA@kandi-green-international-inc.biz</a></span>
-        <span>🏢 MIAMI, FL</span>
+  <!-- Top strip -->
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <div class="top-pill">
+        <span class="emoji">📞</span>
+        <span><strong>Call:</strong> <a href="tel:(305) 878-7648">(305) 878-7648</a></span>
+      </div>
+      <div class="top-pill">
+        <span class="emoji">✉️</span>
+        <span><strong>Email:</strong> <a href="mailto:RADRESHA@kandi-green-international-inc.biz">RADRESHA@kandi-green-international-inc.biz</a></span>
+      </div>
+      <div class="top-pill">
+        <span class="emoji">📍</span>
+        <span>MIAMI, FL</span>
       </div>
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Header / nav -->
   <header>
-    <div class="container">
-      <div class="nav">
-        <div class="brand">
-          <div class="mark"></div>
-          KANDI GREEN INTERNATIONAL INC.
-        </div>
-        <nav>
-          <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#coverage">Coverage</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </nav>
-        <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Free Quote</button>
+    <div class="nav-bar">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div>KANDI GREEN INTERNATIONAL INC.</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#services">Coverage</a>
+        <a href="#why">Why KANDI GREEN INTERNATIONAL INC.</a>
+        <a href="#about">Your Advisor</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Quote</a>
+      </nav>
+      <div class="nav-cta">
+        <button class="btn-ghost" type="button" onclick="window.location.href='tel:(305) 878-7648'">Talk to an advisor</button>
+        <button class="btn-primary" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a free quote</button>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div class="inner">
-        <div>
-          <div class="badge">🛡️ Licensed Insurance Broker</div>
-          <h1>Insurance Coverage Made Simple</h1>
-          <p class="sub">Compare quotes from top carriers and find the perfect policy for your needs. RADRESHA SEIVEWRIGTH is here to guide you every step.</p>
-          <div class="hero-cards">
-            <div class="card">
-              <h3>Health & Medicare</h3>
-              <p>Individual, family, and Medicare plans to keep you covered.</p>
-            </div>
-            <div class="card">
-              <h3>Life & Disability</h3>
-              <p>Protect your family's financial future with the right coverage.</p>
-            </div>
-            <div class="card">
-              <h3>Business Insurance</h3>
-              <p>Liability, property, and specialized coverage for businesses.</p>
-            </div>
+  <div class="shell">
+    <main>
+      <!-- Hero + sidebar contact info -->
+      <div class="hero-grid">
+        <section class="hero-block" aria-labelledby="hero-title">
+          <div class="hero-eyebrow">
+            <span class="badge-dot"></span>
+            <span>Independent Insurance Broker</span>
           </div>
-          <div class="trust">
-            <div class="mini">✅ 10+ Years Experience</div>
-            <div class="mini">🏆 Top Carriers</div>
-            <div class="mini">💰 Save Money</div>
-            <div class="mini">🤝 Personal Service</div>
-          </div>
-        </div>
-        <div>
-          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" alt="Professional insurance consultation" style="border-radius:16px">
-        </div>
-      </div>
-    </div>
-  </section>
+          <h1 id="hero-title">Insurance decisions, made crystal clear.</h1>
+          <p class="hero-sub">
+            Compare health, life, Medicare, and business insurance with guidance from
+            <strong>RADRESHA SEIVEWRIGTH</strong> at KANDI GREEN INTERNATIONAL INC.. No confusing jargon. No pressure. Just coverage that actually fits.
+          </p>
 
-  <!-- Services Section -->
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">Insurance Services We Provide</h2>
-      <p class="section-sub">Comprehensive coverage options from America's most trusted insurance companies</p>
-      <div class="grid-3">
-        <div class="card">
-          <h3>🏥 Health Insurance</h3>
-          <p>Individual and family health plans, including ACA marketplace options and short-term coverage.</p>
-        </div>
-        <div class="card">
-          <h3>👴 Medicare Plans</h3>
-          <p>Medicare Advantage, Supplement, and Part D prescription plans tailored to your needs.</p>
-        </div>
-        <div class="card">
-          <h3>🦷 Dental & Vision</h3>
-          <p>Standalone dental and vision coverage for individuals and families.</p>
-        </div>
-        <div class="card">
-          <h3>💼 Life Insurance</h3>
-          <p>Term and whole life policies to protect your family's financial security.</p>
-        </div>
-        <div class="card">
-          <h3>♿ Disability Income</h3>
-          <p>Short and long-term disability insurance to replace lost income.</p>
-        </div>
-        <div class="card">
-          <h3>🏢 Business Coverage</h3>
-          <p>General liability, property, workers' comp, and industry-specific policies.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Coverage Comparison -->
-  <section id="coverage" style="background:#f9fafb">
-    <div class="container">
-      <h2 class="section-title">Why Choose KANDI GREEN INTERNATIONAL INC.?</h2>
-      <div class="grid-2" style="align-items:center">
-        <div>
-          <ul class="list">
-            <li><span class="check">✓</span> Compare quotes from multiple top-rated carriers</li>
-            <li><span class="check">✓</span> Expert guidance through the entire process</li>
-            <li><span class="check">✓</span> No fees — carriers pay us, not you</li>
-            <li><span class="check">✓</span> Local agent who understands FL regulations</li>
-            <li><span class="check">✓</span> Ongoing support after you enroll</li>
-            <li><span class="check">✓</span> Annual policy reviews to ensure best coverage</li>
-          </ul>
-        </div>
-        <div>
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Healthcare professional reviewing insurance options" style="border-radius:16px">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">How It Works</h2>
-      <p class="section-sub">Getting the right coverage is easier than you think</p>
-      <div class="process grid-3">
-        <div class="step">
-          <div class="num">1</div>
-          <div>
-            <strong>Free Consultation</strong>
-            <p>Tell us about your needs and budget. We'll review your situation at no cost.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="num">2</div>
-          <div>
-            <strong>Compare Options</strong>
-            <p>We'll present quotes from multiple carriers and explain the differences.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="num">3</div>
-          <div>
-            <strong>Enroll with Confidence</strong>
-            <p>We handle the paperwork and make sure you're properly covered.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section style="background:#f9fafb">
-    <div class="container">
-      <h2 class="section-title">What Our Clients Say</h2>
-      <div class="grid-3">
-        <div class="testimonial">
-          <p class="quote">"RADRESHA saved us over $400/month on health insurance with better coverage than we had before!"</p>
-          <p><strong>Sarah M.</strong> • MIAMI</p>
-        </div>
-        <div class="testimonial">
-          <p class="quote">"Finally found someone who could explain Medicare in plain English. Highly recommend!"</p>
-          <p><strong>Robert K.</strong> • FL</p>
-        </div>
-        <div class="testimonial">
-          <p class="quote">"Professional, responsive, and truly cares about finding the right fit for your situation."</p>
-          <p><strong>Maria T.</strong> • Business Owner</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About RADRESHA SEIVEWRIGTH</h2>
-      <div class="about">
-        <div class="bio">
-          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="RADRESHA SEIVEWRIGTH">
-          <div>
-            <p>With over a decade of experience in the insurance industry, RADRESHA SEIVEWRIGTH founded KANDI GREEN INTERNATIONAL INC. to provide personalized, honest insurance guidance to individuals and businesses in FL and beyond.</p>
-            <p>"My goal is simple: help you understand your options and find coverage that truly protects what matters most to you."</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section>
-    <div class="container">
-      <div class="cta">
-        <h2 style="margin:0">Ready to Find Your Perfect Coverage?</h2>
-        <p style="margin:4px 0">Get a free, no-obligation quote in minutes. Let's protect what matters most.</p>
-        <div class="actions">
-          <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Free Quote</button>
-          <button class="ghost" onclick="window.location.href='tel:(305) 878-7648'">📞 Call (305) 878-7648</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section id="faq" style="background:#f9fafb">
-    <div class="container">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <div class="faq" style="max-width:800px">
-        <details>
-          <summary>Do I have to pay for your services?</summary>
-          <p>No! Our services are completely free to you. We're compensated by insurance carriers when you enroll in a policy, so you never pay us directly.</p>
-        </details>
-        <details>
-          <summary>How do you find the best rates?</summary>
-          <p>We work with multiple insurance carriers and use our industry connections to compare rates and coverage. Our experience helps us know which carriers offer the best value for your specific situation.</p>
-        </details>
-        <details>
-          <summary>Can you help if I already have insurance?</summary>
-          <p>Absolutely! We can review your current coverage and often find better rates or more comprehensive coverage. Many clients save money by switching during open enrollment periods.</p>
-        </details>
-        <details>
-          <summary>What areas do you serve?</summary>
-          <p>While we're based in MIAMI, FL, we're licensed to help clients across multiple states. Contact us to confirm coverage in your area.</p>
-        </details>
-        <details>
-          <summary>How long does the process take?</summary>
-          <p>We can often provide quotes within minutes. The full enrollment process typically takes 15-30 minutes, and coverage can begin as soon as the next day for some policies.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Get Your Free Insurance Quote</h2>
-      <p class="section-sub">Fill out this quick form or call us at (305) 878-7648</p>
-      <div class="grid-2" style="gap:32px">
-        <form id="contactForm" onsubmit="handleSubmit(event)">
-          <div class="row">
-            <div>
-              <label for="firstName">First Name *</label>
-              <input type="text" id="firstName" name="first_name" required>
+          <div class="hero-meta-row">
+            <div class="meta-chip">
+              <span class="meta-dot"></span>
+              Personalized options from top-rated carriers
             </div>
-            <div>
-              <label for="lastName">Last Name *</label>
-              <input type="text" id="lastName" name="last_name" required>
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-              <label for="phone">Phone *</label>
-              <input type="tel" id="phone" name="phone" required>
-            </div>
-          </div>
-          <div>
-            <label for="insuranceType">Type of Insurance Needed *</label>
-            <select id="insuranceType" name="insurance_type" required>
-              <option value="">Select coverage type...</option>
-              <option value="health">Health Insurance</option>
-              <option value="medicare">Medicare</option>
-              <option value="life">Life Insurance</option>
-              <option value="disability">Disability</option>
-              <option value="dental-vision">Dental/Vision</option>
-              <option value="business">Business Insurance</option>
-              <option value="multiple">Multiple Types</option>
-            </select>
-          </div>
-          <div>
-            <label for="message">Tell us more about your needs</label>
-            <textarea id="message" name="message" rows="4" placeholder="Current coverage, specific concerns, timeline, etc."></textarea>
-          </div>
-
-          <!-- Express Consent Authorization -->
-          <div class="legal-sections" style="margin-top:16px">
-            <h4>Express Consent Authorization Note</h4>
-            <div id="express-consent-note" class="consent-card">
-              <p>
-                By submitting this form, you acknowledge that KANDI GREEN INTERNATIONAL INC. may contact you
-                using the phone number and email address you provide.
-              </p>
-              <p>
-                <strong>Transactional &amp; informational messages:</strong> With your consent, we may send
-                SMS and phone messages related to quotes, applications, enrollment, and policy service.
-              </p>
-              <p>
-                <strong>Marketing messages:</strong> With separate consent below, we may send promotional
-                SMS and email about products, services, and offers from KANDI GREEN INTERNATIONAL INC..
-              </p>
-              <p>
-                <strong>Message frequency varies.</strong> Message and data rates may apply.
-                Text <strong>STOP</strong> to stop receiving text messages.
-                Text <strong>HELP</strong> for help or contact us at
-                <a href="tel:(305) 878-7648">(305) 878-7648</a> or
-                <a href="mailto:RADRESHA@kandi-green-international-inc.biz">RADRESHA@kandi-green-international-inc.biz</a>.
-              </p>
-            </div>
-
-            <!-- Separate opt-in checkboxes -->
-            <div class="consent-line">
-              <input
-                type="checkbox"
-                id="consent-transactional"
-                name="consent_transactional"
-                required
-                aria-describedby="express-consent-note"
-              >
-              <label for="consent-transactional">
-                <strong>
-                  I consent to receive informational and transactional calls and text messages
-                  about my quotes, applications, and policies from KANDI GREEN INTERNATIONAL INC..
-                </strong>
-              </label>
-            </div>
-
-            <div class="consent-line">
-              <input
-                type="checkbox"
-                id="consent-marketing"
-                name="consent_marketing"
-                aria-describedby="express-consent-note"
-              >
-              <label for="consent-marketing">
-                <strong>
-                  I consent to receive marketing and promotional text messages and emails
-                  from KANDI GREEN INTERNATIONAL INC..
-                </strong>
-              </label>
-            </div>
-
-            <!-- Legal acceptance -->
-            <div class="consent-line">
-              <input
-                type="checkbox"
-                id="consent-terms"
-                name="consent_terms"
-                required
-                aria-describedby="privacy-policy-copy terms-conditions-copy"
-              >
-              <label for="consent-terms">
-                <strong>
-                  I acknowledge that I have read and agree to the Express Consent Authorization Note,
-                  Privacy Policy, and Terms &amp; Conditions.
-                </strong>
-              </label>
+            <div class="meta-chip">
+              <span class="meta-dot" style="background:#22c55e"></span>
+              No extra fees — carriers pay us, not you
             </div>
           </div>
 
-          <!-- Collapsible Privacy & Terms sections -->
-          <div class="legal-sections">
-            <!-- Privacy Policy dropdown -->
-            <details class="disclosure" id="privacy-policy">
-              <summary>Privacy Policy</summary>
-              <div class="body" id="privacy-policy-copy">
-                <p><strong>Last Updated:</strong> <span class="today-date"></span></p>
-                <p>KANDI GREEN INTERNATIONAL INC. ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and disclose your personal information when you use our services or website (the "Service").</p>
-                <p><strong>1. Information We Collect</strong><br>
-                We may collect the following types of information:</p>
-                <ul>
-                  <li><strong>Personal Information:</strong> Name, email address, phone number, mailing address, date of birth, and Social Security number (when required for insurance applications).</li>
-                  <li><strong>Insurance Information:</strong> Current coverage details, health information (for health/life insurance), and beneficiary information.</li>
-                  <li><strong>Usage Data:</strong> Information about how you interact with our Service.</li>
-                </ul>
-                <p><strong>2. How We Use Your Information</strong><br>
-                We use your information to:</p>
-                <ul>
-                  <li>Provide insurance quotes and process applications.</li>
-                  <li>Communicate with you about insurance options and policy updates.</li>
-                  <li>To notify you about changes to our Service.</li>
-                  <li>To provide customer support.</li>
-                  <li>To gather analysis or valuable information so that we can improve our Service.</li>
-                  <li>To monitor the usage of our Service.</li>
-                </ul>
-                <p><strong>3. Information Sharing and Disclosure</strong><br>
-                We do not sell, trade, or otherwise transfer your personal information, including phone number, to any third parties.</p>
-                <p><strong>4. Data Security</strong><br>
-                We implement reasonable security measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information.</p>
-                <p><strong>5. Changes to this Privacy Policy</strong><br>
-                We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
-                <p><strong>6. Contact Us</strong><br>
-                If you have any questions or concerns about this Privacy Policy, please contact us at <a href="mailto:RADRESHA@kandi-green-international-inc.biz">RADRESHA@kandi-green-international-inc.biz</a>.</p>
+          <div class="hero-image-row">
+            <div class="hero-image-main" aria-hidden="true">
+              <!-- Health / medical office style image -->
+              <img src="https://images.pexels.com/photos/6129243/pexels-photo-6129243.jpeg?auto=compress&cs=tinysrgb&w=1200?auto=format&fit=crop&w=1000&q=80" alt="Insurance advisor speaking with a client in a modern office" />
+              <div class="hero-image-tag">Real humans, real coverage conversations.</div>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-card">
+                <strong>Coverage we help with</strong>
+                <div class="stat-pill-row">
+                  <div class="stat-pill">Health &amp; ACA</div>
+                  <div class="stat-pill">Medicare</div>
+                  <div class="stat-pill">Life</div>
+                  <div class="stat-pill">Disability</div>
+                  <div class="stat-pill">Dental &amp; Vision</div>
+                  <div class="stat-pill">Business &amp; Liability</div>
+                </div>
               </div>
+              <div class="stat-card">
+                <strong>How we work</strong>
+                <div class="stat-pill-row">
+                  <div class="stat-pill">Free consultations</div>
+                  <div class="stat-pill">Multiple carriers</div>
+                  <div class="stat-pill">Policy reviews</div>
+                  <div class="stat-pill">Ongoing support</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn-primary" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              Start my quote
+            </button>
+            <button class="btn-ghost" type="button" onclick="window.location.href='tel:(305) 878-7648'">
+              Or call (305) 878-7648
+            </button>
+            <p class="hero-note">
+              Quick conversation, no obligation. We’ll walk through your needs and show you clear coverage options side by side.
+            </p>
+          </div>
+        </section>
+
+        <!-- Sidebar with business info -->
+        <aside class="sidebar-card" aria-label="Contact information">
+          <div class="sidebar-title">
+            <span>📋</span>
+            <span>Talk with RADRESHA</span>
+          </div>
+          <p class="sidebar-tagline">
+            Licensed insurance advisor helping individuals, families, and business owners navigate coverage with confidence.
+          </p>
+
+          <div class="sidebar-divider"></div>
+
+          <div class="sidebar-info">
+            <p>
+              <strong>KANDI GREEN INTERNATIONAL INC.</strong><br />
+              12110 SW 214TH TERR<br />
+              MIAMI, FL 33177
+            </p>
+            <p>
+              <strong>Phone:</strong> <a href="tel:(305) 878-7648">(305) 878-7648</a><br />
+              <strong>Email:</strong> <a href="mailto:RADRESHA@kandi-green-international-inc.biz">RADRESHA@kandi-green-international-inc.biz</a>
+            </p>
+          </div>
+          <p class="sidebar-hours">
+            Standard hours: Monday–Friday, 9:00am–6:00pm (local time). Evening and weekend appointments available by request.
+          </p>
+
+          <div class="sidebar-actions">
+            <button class="btn-primary" type="button" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              Request a callback
+            </button>
+            <button class="btn-ghost" type="button" onclick="window.location.href='mailto:RADRESHA@kandi-green-international-inc.biz'">
+              Email RADRESHA
+            </button>
+          </div>
+
+          <div class="sidebar-divider"></div>
+
+          <div class="sidebar-badges">
+            <div class="mini-badge">
+              <span class="dot"></span>
+              <span>Licensed in FL</span>
+            </div>
+            <div class="mini-badge">
+              <span class="dot" style="background:#06b6d4"></span>
+              <span>Multiple carriers</span>
+            </div>
+            <div class="mini-badge">
+              <span class="dot" style="background:#facc15"></span>
+              <span>No broker fee</span>
+            </div>
+            <div class="mini-badge">
+              <span class="dot" style="background:#a855f7"></span>
+              <span>Policy reviews included</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Services overview stripe -->
+      <section id="services">
+        <div class="section-header">
+          <h2 class="section-title">Coverage we help you navigate.</h2>
+          <p class="section-sub">
+            From everyday health coverage to specialized business policies, KANDI GREEN INTERNATIONAL INC. brings multiple top-rated carriers into a single, clear conversation.
+          </p>
+        </div>
+
+        <div class="service-stripe">
+          <div class="service-intro">
+            <p>
+              <strong>Personal coverage:</strong> Health, Medicare, life, disability, dental, and vision — designed to protect you and the people you care about most.
+            </p>
+            <p>
+              <strong>Business coverage:</strong> Liability, property, workers’ compensation, and industry-specific policies that protect your team and operations.
+            </p>
+          </div>
+          <div class="service-categories">
+            <article class="service-card">
+              <h3>Health &amp; Medicare</h3>
+              <p>Individual, family, and Medicare options with clear explanations of deductibles, networks, and benefits.</p>
+              <div class="service-tags">
+                <span class="service-tag">ACA marketplace</span>
+                <span class="service-tag">Medicare Advantage</span>
+                <span class="service-tag">Supplement &amp; Part D</span>
+              </div>
+            </article>
+            <article class="service-card">
+              <h3>Life &amp; Income Protection</h3>
+              <p>Life and disability coverage built around your income, family, and long-term plans.</p>
+              <div class="service-tags">
+                <span class="service-tag">Term &amp; whole life</span>
+                <span class="service-tag">Short &amp; long-term disability</span>
+              </div>
+            </article>
+            <article class="service-card">
+              <h3>Business &amp; Specialty</h3>
+              <p>Coverage for growing businesses, from core liability to specialized industry policies.</p>
+              <div class="service-tags">
+                <span class="service-tag">General liability</span>
+                <span class="service-tag">Property &amp; BOP</span>
+                <span class="service-tag">Workers’ comp</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why choose + process + testimonials -->
+      <section id="why">
+        <div class="section-header">
+          <h2 class="section-title">Why people choose KANDI GREEN INTERNATIONAL INC..</h2>
+          <p class="section-sub">
+            We combine clear explanations, multiple carriers, and ongoing support — so you’re never guessing about your coverage.
+          </p>
+        </div>
+
+        <div class="tri-grid">
+          <!-- Why list -->
+          <article class="card-panel" aria-label="Why KANDI GREEN INTERNATIONAL INC.">
+            <h3 style="margin:0 0 8px;font-size:14px;">Independent, on your side.</h3>
+            <ul class="list-check">
+              <li><span class="check-icon">✓</span><span>Compare quotes from multiple top-rated carriers, not just one company.</span></li>
+              <li><span class="check-icon">✓</span><span>Clear, plain-language explanations of deductibles, networks, and benefits.</span></li>
+              <li><span class="check-icon">✓</span><span>Local advisor who understands FL regulations and enrollment timelines.</span></li>
+              <li><span class="check-icon">✓</span><span>No advisory fee — carriers compensate us when you enroll in a policy.</span></li>
+              <li><span class="check-icon">✓</span><span>Ongoing support after you enroll, including claim questions and renewals.</span></li>
+              <li><span class="check-icon">✓</span><span>Annual policy reviews to confirm you’re still in the right plan for your life and budget.</span></li>
+            </ul>
+          </article>
+
+          <!-- Process -->
+          <article class="card-panel" aria-label="How the process works">
+            <h3 style="margin:0 0 8px;font-size:14px;">Three steps to confident coverage.</h3>
+            <ol class="step-list">
+              <li class="step-item">
+                <div class="step-badge">1</div>
+                <div>
+                  <strong>Talk through your needs.</strong>
+                  <div>We start with a brief consultation about your goals, current coverage, and budget.</div>
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-badge">2</div>
+                <div>
+                  <strong>Review options side by side.</strong>
+                  <div>We gather quotes from multiple carriers and show you how they compare — in cost and benefits.</div>
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-badge">3</div>
+                <div>
+                  <strong>Enroll and stay supported.</strong>
+                  <div>We handle the paperwork, help with applications, and stay available for questions year-round.</div>
+                </div>
+              </li>
+            </ol>
+          </article>
+
+          <!-- Testimonials -->
+          <article class="card-panel" aria-label="Client feedback">
+            <h3 style="margin:0 0 8px;font-size:14px;">What clients say.</h3>
+            <div class="testimonial">
+              <blockquote>
+                “RADRESHA walked us through three different health plans and made the decision so much easier. We ended up saving money and improving our coverage.”
+              </blockquote>
+              <footer>— Sarah M., MIAMI</footer>
+            </div>
+            <div class="testimonial" style="margin-top:10px;">
+              <blockquote>
+                “I finally understand my Medicare options. Everything was explained clearly, and I never felt pressured.”
+              </blockquote>
+              <footer>— Robert K., FL</footer>
+            </div>
+            <div class="testimonial" style="margin-top:10px;">
+              <blockquote>
+                “As a business owner, having someone who understands both employee benefits and liability coverage has been invaluable.”
+              </blockquote>
+              <footer>— Maria T., Business Owner</footer>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- About advisor -->
+      <section id="about">
+        <div class="section-header">
+          <h2 class="section-title">Meet your insurance guide.</h2>
+          <p class="section-sub">
+            Behind KANDI GREEN INTERNATIONAL INC. is a real person who cares about making insurance decisions feel human, not transactional.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card">
+            <div class="rep-line">
+              <div class="rep-avatar">
+                <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=300&q=80" alt="RADRESHA SEIVEWRIGTH, licensed insurance advisor" />
+              </div>
+              <div>
+                <div class="rep-name">RADRESHA SEIVEWRIGTH</div>
+                <div class="rep-role">Founder &amp; Licensed Insurance Broker, KANDI GREEN INTERNATIONAL INC.</div>
+              </div>
+            </div>
+            <div class="about-body">
+              <p>
+                After years working inside large insurance organizations, RADRESHA created KANDI GREEN INTERNATIONAL INC. to bring a more personal, transparent approach to coverage decisions in FL and beyond.
+              </p>
+              <p>
+                RADRESHA works with individuals, families, and businesses to untangle fine print, clarify options, and recommend coverage that aligns with both your risk and your budget.
+              </p>
+              <div class="about-highlight">
+                “My goal is simple: replace guesswork with clarity — so you know exactly what you’re paying for and how it protects you when it matters most.”
+              </div>
+            </div>
+          </article>
+
+          <div class="about-photo-wrapper" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1582719478250-cc860f7d65b6?auto=format&fit=crop&w=1000&q=80" alt="Modern medical office environment" />
+            <div class="about-tag">We’re here before, during, and after you enroll.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <div class="section-header">
+          <h2 class="section-title">Questions clients often ask.</h2>
+          <p class="section-sub">
+            A few quick answers — and if you don’t see your question here, you can always call or send us a note.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div>
+            <details class="faq-item" open>
+              <summary>Do I pay anything to work with KANDI GREEN INTERNATIONAL INC.?</summary>
+              <p>
+                No. Our guidance is free to you. We’re compensated by insurance carriers when you enroll in a plan, so you never pay us a separate advisory fee.
+              </p>
             </details>
-
-            <!-- Terms & Conditions dropdown -->
-            <details class="disclosure" id="terms-conditions">
-              <summary>Terms &amp; Conditions</summary>
-              <div class="body" id="terms-conditions-copy">
-                <p><strong>Last Updated:</strong> <span class="today-date"></span></p>
-                <p>Welcome to KANDI GREEN INTERNATIONAL INC. (the "Service," "we," "us," or "our"). By accessing or using the Service, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with these terms, please do not use the Service.</p>
-                <p><strong>1. Use of the Service</strong><br>
-                <em>1.1 Eligibility:</em> You must be at least 18 years old to use the Service. By using the Service, you represent and warrant that you meet the eligibility requirements.<br>
-                <em>1.2 Account:</em> You may be required to create an account to access certain features of the Service. You are responsible for maintaining the confidentiality of your account and password and for restricting access to your account. You agree to accept responsibility for all activities that occur under your account.</p>
-                <p><strong>2. User Content</strong><br>
-                <em>2.1 Submission:</em> You may have the opportunity to submit content, including but not limited to text, images, and other materials ("User Content"). By submitting User Content, you grant us a non-exclusive, worldwide, royalty-free, irrevocable, sub-licensable license to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display such content.<br>
-                <em>2.2 Responsibility:</em> You are solely responsible for the accuracy, legality, and appropriateness of User Content. We reserve the right to remove any User Content that violates these Terms and Conditions or is otherwise objectionable.</p>
-                <p><strong>3. Intellectual Property</strong><br>
-                <em>3.1 Ownership:</em> The Service and its original content, features, and functionality are owned by KANDI GREEN INTERNATIONAL INC. and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.<br>
-                <em>3.2 License:</em> Subject to these Terms and Conditions, we grant you a limited, non-exclusive, non- transferable, and revocable license to use the Service for your personal or internal business purposes.</p>
-                <p><strong>4. Limitation of Liability</strong><br>
-                <em>4.1 Disclaimer:</em> The Service is provided "as is" and "as available" without any warranties, expressed or implied. We do not warrant that the Service will be error-free or uninterrupted, that defects will be corrected, or that the Service is free of viruses or other harmful components.<br>
-                <em>4.2 Limitation of Liability:</em> In no event shall KANDI GREEN INTERNATIONAL INC. be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from (a) your use or inability to use the Service; (b) any unauthorized access to or use of our servers and/or any personal information stored therein.</p>
-                <p><strong>5. Governing Law</strong><br>
-                These Terms and Conditions shall be governed by and construed in accordance with the laws of The United States of America, without regard to its conflict of law principles.</p>
-                <p><strong>6. Changes to Terms and Conditions</strong><br>
-                We reserve the right to update or change these Terms and Conditions at any time. Your continued use of the Service after we post any modifications to the Terms and Conditions on this page will constitute your acknowledgment of the modifications and your consent to abide and be bound by the modified Terms and Conditions.</p>
-                <p><strong>7. Contact Us</strong><br>
-                If you have any questions about these Terms and Conditions, please contact us at <a href="mailto:RADRESHA@kandi-green-international-inc.biz">RADRESHA@kandi-green-international-inc.biz</a>.</p>
-              </div>
+            <details class="faq-item">
+              <summary>How do you find the best rates?</summary>
+              <p>
+                We work with multiple top-rated carriers and compare their rates and benefits side by side. We’ll walk you through where you’re getting the most value based on your priorities.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Can you review coverage I already have?</summary>
+              <p>
+                Absolutely. Many clients come to us with existing policies. We review your coverage, identify gaps or overlaps, and if it makes sense, suggest alternatives that may save money or improve benefits.
+              </p>
             </details>
           </div>
-
-          <div style="margin-top:16px;display:flex;gap:10px;align-items:center">
-            <button class="submit" type="submit">Send to KANDI GREEN INTERNATIONAL INC.</button>
-            <span class="sub"></span>
+          <div>
+            <details class="faq-item">
+              <summary>What areas do you serve?</summary>
+              <p>
+                We’re based in MIAMI, FL, and licensed in multiple states. Reach out and we’ll confirm whether we can assist based on your location and coverage needs.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>How quickly can coverage start?</summary>
+              <p>
+                In many cases, we can present quotes within minutes and complete enrollment in 15–30 minutes. Start dates depend on the type of coverage and carrier rules — some policies can begin as soon as the next day.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Will you still be available after I enroll?</summary>
+              <p>
+                Yes. We’re here for questions about claims, renewals, plan changes, and annual reviews. Insurance should never feel like a one-time transaction.
+              </p>
+            </details>
           </div>
-          <p id="formStatus" class="sub" role="status" style="margin-top:10px"></p>
-        </form>
-
-        <div class="box">
-          <img src="https://images.unsplash.com/photo-1502175353174-a7a70e73b362?auto=format&fit=crop&w=1200&q=80" alt="Happy family protected by insurance" style="border-radius:12px;margin-bottom:12px;">
-          <p><strong>KANDI GREEN INTERNATIONAL INC.</strong><br>
-            12110 SW 214TH TERR<br>MIAMI, FL 33177</p>
-          <p><strong>Phone:</strong> <a href="tel:(305) 878-7648">(305) 878-7648</a><br>
-             <strong>Email:</strong> <a href="mailto:RADRESHA@kandi-green-international-inc.biz">RADRESHA@kandi-green-international-inc.biz</a></p>
-          <p class="sub">Hours: Mon–Fri 9am–6pm (local)</p>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
+
+      <!-- Contact / quote form with express consent & legal -->
+      <section id="contact" aria-label="Request your free insurance quote">
+        <div class="section-header">
+          <h2 class="section-title">Request your free insurance quote.</h2>
+          <p class="section-sub">
+            Share a few details below and RADRESHA will follow up with personalized options. We’re happy to talk by phone, email, or text — whatever works best for you.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="quote-card">
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+              <div class="field-row">
+                <div class="field">
+                  <label for="firstName">First name *</label>
+                  <input type="text" id="firstName" name="first_name" required />
+                </div>
+                <div class="field">
+                  <label for="lastName">Last name *</label>
+                  <input type="text" id="lastName" name="last_name" required />
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="field">
+                  <label for="phone">Phone *</label>
+                  <input type="tel" id="phone" name="phone" required />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="insuranceType">Type of insurance you’re interested in *</label>
+                <select id="insuranceType" name="insurance_type" required>
+                  <option value="">Select coverage type...</option>
+                  <option value="health">Health insurance</option>
+                  <option value="medicare">Medicare</option>
+                  <option value="life">Life insurance</option>
+                  <option value="disability">Disability income</option>
+                  <option value="dental-vision">Dental &amp; vision</option>
+                  <option value="business">Business insurance</option>
+                  <option value="multiple">Multiple types</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="message">Tell us a bit about your situation</label>
+                <textarea id="message" name="message" placeholder="Current coverage, important concerns, timeframes, or anything else you’d like us to know."></textarea>
+              </div>
+
+              <!-- Express Consent Note -->
+              <p class="legal-group-title">Express Consent Authorization Note</p>
+              <div id="express-consent-note" class="consent-card">
+                <p>
+                  By submitting this form, you acknowledge that KANDI GREEN INTERNATIONAL INC. may contact you using the phone number
+                  and email address you provide.
+                </p>
+                <p>
+                  <strong>Transactional &amp; informational messages:</strong> With your consent, we may send SMS and
+                  phone messages related to quotes, applications, enrollment, and policy service.
+                </p>
+                <p>
+                  <strong>Marketing messages:</strong> With separate consent below, we may send promotional SMS and email
+                  about products, services, and offers from KANDI GREEN INTERNATIONAL INC..
+                </p>
+                <p>
+                  <strong>Message frequency varies.</strong> Message and data rates may apply.
+                  Text <strong>STOP</strong> to stop receiving text messages. Text <strong>HELP</strong> for help or contact us at
+                  <a href="tel:(305) 878-7648">(305) 878-7648</a> or <a href="mailto:RADRESHA@kandi-green-international-inc.biz">RADRESHA@kandi-green-international-inc.biz</a>.
+                </p>
+              </div>
+
+              <!-- Three separate checkboxes (required) -->
+              <div class="consent-line">
+                <input
+                  type="checkbox"
+                  id="consent-transactional"
+                  name="consent_transactional"
+                  required
+                  aria-describedby="express-consent-note"
+                />
+                <label for="consent-transactional">
+                  <strong>
+                    I consent to receive informational and transactional calls and text messages
+                    about my quotes, applications, and policies from KANDI GREEN INTERNATIONAL INC..
+                  </strong>
+                </label>
+              </div>
+
+              <div class="consent-line">
+                <input
+                  type="checkbox"
+                  id="consent-marketing"
+                  name="consent_marketing"
+                  required
+                  aria-describedby="express-consent-note"
+                />
+                <label for="consent-marketing">
+                  <strong>
+                    I consent to receive marketing and promotional text messages and emails
+                    from KANDI GREEN INTERNATIONAL INC..
+                  </strong>
+                </label>
+              </div>
+
+              <div class="consent-line">
+                <input
+                  type="checkbox"
+                  id="consent-terms"
+                  name="consent_terms"
+                  required
+                  aria-describedby="privacy-policy-copy terms-conditions-copy"
+                />
+                <label for="consent-terms">
+                  <strong>
+                    I acknowledge that I have read and agree to the Express Consent Authorization Note,
+                    Privacy Policy, and Terms &amp; Conditions.
+                  </strong>
+                </label>
+              </div>
+
+              <!-- Legal dropdowns -->
+              <details class="disclosure" id="privacy-policy">
+                <summary>Privacy Policy</summary>
+                <div class="disclosure-body" id="privacy-policy-copy">
+                  <p><strong>Last Updated:</strong> <span class="today-date"></span></p>
+                  <p>
+                    KANDI GREEN INTERNATIONAL INC. (“we,” “us,” or “our”) is committed to protecting your privacy. This Privacy Policy explains
+                    how we collect, use, and disclose your personal information when you use our services or website (the “Service”).
+                  </p>
+                  <p><strong>1. Information We Collect</strong></p>
+                  <ul>
+                    <li>
+                      <strong>Personal Information:</strong> Name, email address, phone number, mailing address, date of birth, and
+                      Social Security number (when required for insurance applications).
+                    </li>
+                    <li>
+                      <strong>Insurance Information:</strong> Current coverage details, health information (for health/life insurance),
+                      and beneficiary information.
+                    </li>
+                    <li>
+                      <strong>Usage Data:</strong> Information about how you interact with our Service.
+                    </li>
+                  </ul>
+                  <p><strong>2. How We Use Your Information</strong></p>
+                  <ul>
+                    <li>Provide insurance quotes and process applications.</li>
+                    <li>Communicate with you about insurance options and policy updates.</li>
+                    <li>Notify you about changes to our Service.</li>
+                    <li>Provide customer support.</li>
+                    <li>Gather analysis or valuable information so that we can improve our Service.</li>
+                    <li>Monitor the usage of our Service.</li>
+                  </ul>
+                  <p><strong>3. Information Sharing and Disclosure</strong></p>
+                  <p>
+                    We do not sell, trade, or otherwise transfer your personal information, including phone number, to any third parties.
+                  </p>
+                  <p><strong>4. Data Security</strong></p>
+                  <p>
+                    We implement reasonable security measures to protect against unauthorized access, alteration, disclosure, or destruction
+                    of your personal information.
+                  </p>
+                  <p><strong>5. Changes to this Privacy Policy</strong></p>
+                  <p>
+                    We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
+                  </p>
+                  <p><strong>6. Contact Us</strong></p>
+                  <p>
+                    If you have any questions or concerns about this Privacy Policy, please contact us at
+                    <a href="mailto:RADRESHA@kandi-green-international-inc.biz">RADRESHA@kandi-green-international-inc.biz</a>.
+                  </p>
+                </div>
+              </details>
+
+              <details class="disclosure" id="terms-conditions">
+                <summary>Terms &amp; Conditions</summary>
+                <div class="disclosure-body" id="terms-conditions-copy">
+                  <p><strong>Last Updated:</strong> <span class="today-date"></span></p>
+                  <p>
+                    Welcome to KANDI GREEN INTERNATIONAL INC. (the “Service,” “we,” “us,” or “our”). By accessing or using the Service,
+                    you agree to comply with and be bound by these Terms and Conditions. If you do not agree with these terms,
+                    please do not use the Service.
+                  </p>
+                  <p><strong>1. Use of the Service</strong></p>
+                  <p>
+                    <em>1.1 Eligibility:</em> You must be at least 18 years old to use the Service. By using the Service, you represent
+                    and warrant that you meet the eligibility requirements.
+                  </p>
+                  <p>
+                    <em>1.2 Account:</em> You may be required to create an account to access certain features of the Service.
+                    You are responsible for maintaining the confidentiality of your account and password and for restricting
+                    access to your account. You agree to accept responsibility for all activities that occur under your account.
+                  </p>
+                  <p><strong>2. User Content</strong></p>
+                  <p>
+                    <em>2.1 Submission:</em> You may have the opportunity to submit content, including but not limited to text, images,
+                    and other materials (“User Content”). By submitting User Content, you grant us a non-exclusive, worldwide, royalty-free,
+                    irrevocable, sub-licensable license to use, reproduce, modify, adapt, publish, translate, create derivative works from,
+                    distribute, and display such content.
+                  </p>
+                  <p>
+                    <em>2.2 Responsibility:</em> You are solely responsible for the accuracy, legality, and appropriateness of User Content.
+                    We reserve the right to remove any User Content that violates these Terms and Conditions or is otherwise objectionable.
+                  </p>
+                  <p><strong>3. Intellectual Property</strong></p>
+                  <p>
+                    <em>3.1 Ownership:</em> The Service and its original content, features, and functionality are owned by KANDI GREEN INTERNATIONAL INC. and are protected
+                    by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
+                  </p>
+                  <p>
+                    <em>3.2 License:</em> Subject to these Terms and Conditions, we grant you a limited, non-exclusive, non-transferable,
+                    and revocable license to use the Service for your personal or internal business purposes.
+                  </p>
+                  <p><strong>4. Limitation of Liability</strong></p>
+                  <p>
+                    <em>4.1 Disclaimer:</em> The Service is provided “as is” and “as available” without any warranties, expressed or implied.
+                    We do not warrant that the Service will be error-free or uninterrupted, that defects will be corrected, or that the Service
+                    is free of viruses or other harmful components.
+                  </p>
+                  <p>
+                    <em>4.2 Limitation of Liability:</em> In no event shall KANDI GREEN INTERNATIONAL INC. be liable for any indirect, incidental, special, consequential,
+                    or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use,
+                    goodwill, or other intangible losses, resulting from (a) your use or inability to use the Service; or (b) any unauthorized
+                    access to or use of our servers and/or any personal information stored therein.
+                  </p>
+                  <p><strong>5. Governing Law</strong></p>
+                  <p>
+                    These Terms and Conditions shall be governed by and construed in accordance with the laws of the United States of America,
+                    without regard to its conflict of law principles.
+                  </p>
+                  <p><strong>6. Changes to Terms and Conditions</strong></p>
+                  <p>
+                    We reserve the right to update or change these Terms and Conditions at any time. Your continued use of the Service after we post
+                    any modifications to the Terms and Conditions on this page will constitute your acknowledgment of the modifications and your consent
+                    to abide and be bound by the modified Terms and Conditions.
+                  </p>
+                  <p><strong>7. Contact Us</strong></p>
+                  <p>
+                    If you have any questions about these Terms and Conditions, please contact us at
+                    <a href="mailto:RADRESHA@kandi-green-international-inc.biz">RADRESHA@kandi-green-international-inc.biz</a>.
+                  </p>
+                </div>
+              </details>
+
+              <div class="submit-row">
+                <button class="btn-primary" type="submit">Send to KANDI GREEN INTERNATIONAL INC.</button>
+                <small>We typically respond within one business day.</small>
+              </div>
+              <p id="formStatus" role="status"></p>
+            </form>
+          </div>
+
+          <!-- Contact sidebar with imagery + quick info -->
+          <aside class="contact-side">
+            <div class="contact-photo-main" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1000&q=80" alt="Calm waiting area in a medical office" />
+              <div class="contact-photo-label">Insurance doesn’t have to feel clinical — just clear.</div>
+            </div>
+            <div class="contact-card">
+              <p>
+                <strong>Prefer to talk it through?</strong><br />
+                Call us at <a href="tel:(305) 878-7648">(305) 878-7648</a> or email
+                <a href="mailto:RADRESHA@kandi-green-international-inc.biz">RADRESHA@kandi-green-international-inc.biz</a>. We’re happy to schedule a time that fits your day.
+              </p>
+              <p>
+                <strong>Mailing address:</strong><br />
+                KANDI GREEN INTERNATIONAL INC.<br />
+                12110 SW 214TH TERR, MIAMI, FL 33177
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
 
   <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
-        <div style="display:flex;gap:12px;align-items:center">
-          <span class="mark" style="width:28px;height:28px"></span>
-          <strong>KANDI GREEN INTERNATIONAL INC.</strong>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <div class="footer-brand-mark"></div>
+          <div>KANDI GREEN INTERNATIONAL INC.</div>
         </div>
-        <div>
-          <a href="#about">About</a> &nbsp;•&nbsp;
-          <a href="#faq">FAQ</a> &nbsp;•&nbsp;
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <span>•</span>
+          <a href="#faq">FAQ</a>
+          <span>•</span>
           <a href="#contact">Contact</a>
         </div>
       </div>
-      <div class="legal" style="margin-top:10px">
-        © <span id="year"></span> KANDI GREEN INTERNATIONAL INC.. All rights reserved. Information on this site is for educational purposes and not a guarantee of coverage. Licensing varies by state.
+      <div>
+        © <span id="year"></span> KANDI GREEN INTERNATIONAL INC.. All rights reserved.
+        Information is for educational purposes only and does not guarantee eligibility, approval, or specific coverage.
+        Licensing and product availability vary by state.
       </div>
     </div>
   </footer>
 
   <script>
-    // Smooth scrolling for internal links (fallback for older browsers)
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id=a.getAttribute('href').slice(1);
-        const el=document.getElementById(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+    // Smooth scroll fallback for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var id = this.getAttribute('href').slice(1);
+        var target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
       });
     });
-  
-    // Simple client-side handler (replace with your form endpoint or n8n webhook)
-    function handleSubmit(e){
-      e.preventDefault();
-      const status=document.getElementById('formStatus');
-      status.textContent='Thanks! We received your request. We'll reach out soon!';
-      e.target.reset();
+
+    // Simple client-side form handler (replace with n8n webhook as needed)
+    function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById('formStatus');
+      status.textContent = "Thanks! We received your request. We'll follow up from RADRESHA@kandi-green-international-inc.biz.";
+      event.target.reset();
     }
-  
-    // Year + "today's date" (M/D/YYYY) for policy blocks
-    document.getElementById('year').textContent = new Date().getFullYear();
-  
-    (function setTodayDates(){
-      var d = new Date();
-      var mm = d.getMonth() + 1;
-      var dd = d.getDate();
-      var yyyy = d.getFullYear();
+
+    // Year + today's date in MM/DD/YYYY for legal blocks
+    (function () {
+      var now = new Date();
+      document.getElementById('year').textContent = now.getFullYear();
+
+      var mm = now.getMonth() + 1;
+      var dd = now.getDate();
+      var yyyy = now.getFullYear();
       var formatted = mm + '/' + dd + '/' + yyyy;
-      var nodes = document.querySelectorAll('.today-date');
-      for (var i = 0; i < nodes.length; i++) {
-        nodes[i].textContent = formatted;
+      var dateNodes = document.querySelectorAll('.today-date');
+      for (var i = 0; i < dateNodes.length; i++) {
+        dateNodes[i].textContent = formatted;
       }
     })();
   </script>
